@@ -25,14 +25,31 @@ Ensure you have the following installed:
 * **Node.js** (LTS version) and **npm** (for the frontend)
 * **Ollama**: Download and install the Ollama service.
 
-> **Crucial Step:** Ensure the Ollama service is running, and you have pulled the required LLM model (e.g., `llama3` or the model specified in `main.py` code). The backend relies on Ollama being accessible locally on its default port.
+> **Crucial Step:** Ensure the Ollama service is running, and you have pulled the required LLM model (e.g., `llama3` or the model you can specify in main.py code). The backend relies on Ollama being accessible locally on its default port.
+
+#### 0. Pull the LLM Model (Ollama Setup)
+
+The backend requires the LLM model to be available locally.
+
+1.  Ensure the **Ollama service is running** on your system (Install and start Ollama if that wasn't done beforehand. E.g. from the official website https://ollama.com/).
+2.  Open your terminal and pull the required model (we'll use `llama3` as an example, as it is a common choice for this type of task):
+
+```bash
+ollama pull llama3
+```
+> **Note**: If you want to use another mode don't forget to specify it in main.py code.
+
+
+-----
 
 #### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd <your-project-directory>
+git clone https://github.com/MarkMerk/PDF-Reader.git
+cd PDF-Reader
 ```
+
+-----
 
 #### 2. Set Up the Backend (FastAPI/Python)
 
@@ -52,6 +69,8 @@ uvicorn main:app --reload
 ```
 
 *Keep this terminal window open and running.*
+
+-----
 
 #### 3. Set Up the Frontend (React/Vite)
 
